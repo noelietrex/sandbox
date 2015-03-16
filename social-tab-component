@@ -1,0 +1,48 @@
+<div class="social-modal">
+						<ul>
+							<li class="social-tab-component">
+								<button>Facebook</button>
+								<div class="socialcontent">
+									<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F#listlast(fbinfo.siteURL,'/')#&amp;width=400&amp;height=300&amp;show_faces=false&amp;colorscheme=light&amp;stream=true&amp;border_color=%23FFFFFF&amp;header=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:400px; height:300px;" allowTransparency="true"></iframe>					
+								</div>
+							</li>
+
+							<li class="social-tab-component">
+								<button>Twitter</button>
+								<div class="socialcontent">
+									<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/#listlast(twinfo.siteURL,'/')#" width="300" height="300" data-widget-id="#twinfo.feedURL#" data-chrome="nofooter transparent">Tweets by @#listlast(twinfo.siteURL,'/')#</a>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+								</div>
+							</li>
+
+							<li class="social-tab-component">
+								<button>Instagram</button>
+								<div class="socialcontent">
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<style>
+						.socialcontent {
+							display: none;
+						}
+						.js-active .socialcontent {
+							display: block;
+						}
+					</style>
+
+					<script type="text/javascript">
+						jQuery(function(){
+							
+							$(".social-tab-component").click(function () {
+								if ($(this).hasClass("js-active")) {
+									$(this).removeClass("js-active");
+								}
+								else {
+									$(".js-active").removeClass("js-active");
+									$(this).addClass("js-active");
+								}
+							});
+						});
+					</script>
