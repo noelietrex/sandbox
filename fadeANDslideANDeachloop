@@ -1,0 +1,101 @@
+<div id="iFeature-Message">
+    <div class="js-ifeature ifeature-wrap" style="height: 18px;">
+        <ul>
+            <li class="ifeature-item message-first js-selected" style="display: none;"> <a href="/news/visit-with-the-easter-bunny-today-until-april-4/2129990635" target="_self">Visit with the Easter Bunny today until April 4 </a>
+            </li>
+			
+            <li class="ifeature-item message-last" style="display: none;"> <a href="/news/we-are-open-today-10am-9-30pm-with-great-deals/2129990634" target="_self">We are open today 10AM-9:30PM with great deals</a>
+            </li>
+            
+            <li class="ifeature-item message-last" style="display: none;"> <a href="/news/we-are-open-today-10am-9-30pm-with-great-deals/2129990634" target="_self">UNIKITTY is number three which is fun</a>
+            </li>
+            
+            <li class="ifeature-item message-last" style="display: none;"> <a href="/news/we-are-open-today-10am-9-30pm-with-great-deals/2129990634" target="_self">THIS IS NUMBER FOURRRRR</a>
+            </li>
+		</ul>
+	</div>
+</div>
+
+
+
+<style>
+.js-ifeature li {
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    top: initial;
+    overflow: hidden;
+}
+#iFeature-Message {
+    overflow:hidden;
+	width: 100%;
+	background-color: $highlight;
+	height: auto;
+	position: absolute;
+	margin-top: 70px;
+	text-align: center;
+	.hideMessage {
+		display: none;
+	}
+	.ifeature-item {
+		display: none;
+		&.js-selected {
+			display: block;
+		}
+	}
+	.feature-center {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.fa-flash {
+		float: left;
+		padding: .6em;
+		color: white;
+	}
+	#iFeatures-controls {
+		float: right;
+		padding: .6em;
+	}
+	.ifeature-wrap {
+		padding: .5em;
+	}
+	a {
+		color: white;
+		text-decoration: none;
+		font-family: $caviar;
+		text-transform: uppercase;
+		font-size: 18px;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+}
+</style>
+
+
+
+<script>
+var time = 2000,
+    current = 0,
+    $lis = $('.js-ifeature li').hide();
+    howtall = $('.js-ifeature li').height();
+
+//set height
+$lis.css('height', howtall + 'px');
+
+function eachChange(){
+    $lis.eq(current).animate({
+            height:"toggle",
+            opacity:"toggle"
+        },time);
+    $lis.eq(current).delay(time).animate({
+            top:-howtall + 'px',
+            opacity:"toggle"
+        },time, eachChange);
+    $lis.css('top', 'initial');
+    
+    current = (current + 1) % $lis.length;
+}
+eachChange();
+</script>
